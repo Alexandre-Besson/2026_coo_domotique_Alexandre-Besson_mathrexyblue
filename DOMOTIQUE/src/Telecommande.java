@@ -1,26 +1,40 @@
+import java.util.ArrayList;
+
 public class Telecommande {
 
+    private ArrayList<Lampe> lampes;
+
     public Telecommande(){
-        throw new Error("TO DO");
+        lampes = new ArrayList();
     }
 
     public void ajouterLampe(Lampe l){
-        throw new Error("TO DO");
+        lampes.add(l);
     }
 
     public void activerLampe(int indiceLampe){
-        throw new Error("TO DO");
+        if (!(indiceLampe < lampes.size()-1)) {
+            lampes.get(indiceLampe).allumer();
+        }
     }
 
     public void desactiverLampe(int indiceLampe){
-        throw new Error("TO DO");
+        if ((indiceLampe < lampes.size()-1)&&(indiceLampe > 0)) {
+            lampes.get(indiceLampe).eteindre();
+        }
     }
 
     public void activerTout(){
-        throw new Error("TO DO");
+        for (Lampe l : lampes){
+            l.allumer();
+        };
     }
 
     public String toString(){
-        throw new Error("TO DO");
+        String s = "";
+        for(int i=0;i<lampes.size();i++){
+            s+=i+":"+lampes.get(i).toString();
+        }
+        return s;
     }
 }
