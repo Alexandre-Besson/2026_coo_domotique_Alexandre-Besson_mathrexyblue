@@ -13,13 +13,13 @@ public class Telecommande {
     }
 
     public void activerLampe(int indiceLampe){
-        if (!(indiceLampe < lampes.size()-1)) {
+        if ((indiceLampe < lampes.size())&&(indiceLampe > 0)) {
             lampes.get(indiceLampe).allumer();
         }
     }
 
     public void desactiverLampe(int indiceLampe){
-        if ((indiceLampe < lampes.size()-1)&&(indiceLampe > 0)) {
+        if ((indiceLampe < lampes.size())&&(indiceLampe > 0)) {
             lampes.get(indiceLampe).eteindre();
         }
     }
@@ -33,7 +33,7 @@ public class Telecommande {
     public String toString(){
         String s = "";
         for(int i=0;i<lampes.size();i++){
-            s+=i+":"+lampes.get(i).toString();
+            s+=i+": "+lampes.get(i).toString()+"\n";
         }
         return s;
     }
