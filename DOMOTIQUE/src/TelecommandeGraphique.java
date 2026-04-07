@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * creer une interface graphique pour une telecommande
+ * Creer une interface graphique pour une telecommande
  */
 public class TelecommandeGraphique {
 
@@ -18,7 +18,7 @@ public class TelecommandeGraphique {
 	private Telecommande tele;
 
 	/**
-	 * constructeur d'interface
+	 * Constructeur d'interface
 	 * 
 	 * @param t
 	 *            telecommande a manipuler

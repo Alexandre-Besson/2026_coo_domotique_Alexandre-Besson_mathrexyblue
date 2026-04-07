@@ -102,4 +102,8 @@ public class Telecommande {
 		return this.appareils;
 	}
 
+	public int getNombre(){
+		return this.appareils.size();
+	}
+
 }
