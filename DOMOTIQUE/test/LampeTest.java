@@ -1,42 +1,41 @@
-import org.junit.jupiter.api.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
 
 /**
  * classe de test permettant de tester la classe Lampe
  */
 public class LampeTest {
 
+	@Test
 	/**
 	 * test du constructeur de lampe
 	 */
-	@Test
 	public void testLampe() {
 		// methode testee
 		Lampe l = new Lampe("lampe1");
 
 		// verification
 		boolean res = l.isAllume();
-		assertFalse(res, "une nouvelle lampe devrait etre eteinte");
+		assertEquals("une nouvelle lampe devrait etre eteinte", false, res);
 	}
 
-
+	@Test
 	/**
 	 * test allumer une lampe eteinte
 	 */
-	@Test
 	public void testAllumer() {
 		// preparation des donnees
 		Lampe l = new Lampe("lampe1");
-
+		
 		//methode testee
 		l.allumer();
 
 		// verification
 		boolean res = l.isAllume();
-		assertTrue(res, "apres allumer, la lampe devrait etre allumee");
+		assertEquals("apres allumer, la lampe devrait etre allumee", true, res);
 	}
-
+	
 	@Test
 	/**
 	 * test allumer une lampe allumee
@@ -45,13 +44,13 @@ public class LampeTest {
 		// preparation des donnees
 		Lampe l = new Lampe("lampe1");
 		l.allumer();
-
+		
 		//methode testee
 		l.allumer();
 
 		// verification
 		boolean res = l.isAllume();
-		assertTrue(res,"apres allumer, la lampe devrait etre allumee");
+		assertEquals("apres allumer, la lampe devrait etre allumee", true, res);
 	}
 
 	@Test
@@ -62,15 +61,15 @@ public class LampeTest {
 		// preparation des donnees
 		Lampe l = new Lampe("lampe1");
 		l.allumer();
-
+		
 		//methode testee
 		l.eteindre();
 
 		// verification
 		boolean res = l.isAllume();
-		assertFalse(res,"apres eteindre, la lampe devrait etre eteinte");
+		assertEquals("apres eteindre, la lampe devrait etre eteinte", false, res);
 	}
-
+	
 	@Test
 	/**
 	 * test to String lampe eteinte
@@ -78,14 +77,14 @@ public class LampeTest {
 	public void testToString_eteinte() {
 		// preparation des donnees
 		Lampe l = new Lampe("lampe1");
-
+		
 		//methode testee
 		String r=""+l;
-
+		
 		//verification
-		assertEquals("lampe1: Off",r,"affichage devrait etr off");
+		assertEquals("affichage devrait etr off","lampe1: Off",r);
 	}
-
+	
 	@Test
 	/**
 	 * test to String lampe allumee
@@ -94,12 +93,12 @@ public class LampeTest {
 		// preparation des donnees
 		Lampe l = new Lampe("lampe1");
 		l.allumer();
-
+		
 		//methode testee
 		String r=""+l;
-
+		
 		//verification
-		assertEquals("lampe1: On",r,"affichage devrait etr off");
+		assertEquals("affichage devrait etr off","lampe1: On",r);
 
 	}
 
