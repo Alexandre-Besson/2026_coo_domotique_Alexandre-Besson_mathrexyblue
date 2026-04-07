@@ -3,16 +3,16 @@ import java.util.List;
 public interface Appareil{
 
 
-public allumer();
+public void allumer();
 
 
 
-public eteindre();
+public void eteindre();
 
 
 
 
-public toString();
+public String toString();
 
 
 }
