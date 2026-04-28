@@ -45,4 +45,12 @@ public class Thermostat extends JPanel {
 
         this.repaint();
     }
+
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+    }
+
+    public int getTemperature() {
+        return this.temperature;
+    }
 }
