@@ -19,6 +19,6 @@ public class AdapterThermostat implements Appareil{
 
     @Override
     public String toString(){
-        return "thermostat : "this.thermostat.getTemperature();
+        return "thermostat : "+this.thermostat.getTemperature();
     }
 }
